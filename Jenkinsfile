@@ -5,7 +5,7 @@ pipeline {
         stage('Clone') {
             steps {
                 // Removed the semicolon at the end of the URL
-                git branch: 'main', url: 'https://github.com/245123737080-pixel/calculator.git'
+                git branch: 'main', url: 'https://github.com/245123737080-pixel/calculator.git';
             }
         }
 
