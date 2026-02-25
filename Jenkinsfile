@@ -36,17 +36,7 @@ pipeline {
         }
     }
     
-    post {
-        always {
-            echo 'Pipeline execution finished.'
-        }
-        success {
-            echo 'Build was successful!'
-        }
-        failure {
-            echo 'Build failed. Check the console output.'
-        }
-    }
-}
    
 }
+   
+
