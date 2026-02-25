@@ -1,42 +1,32 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Clone') {
-            steps {
-                // Removed the semicolon at the end of the URL
-                git branch: 'main', url: 'https://github.com/245123737080-pixel/calculator.git';
-            }
-        }
-
-        stage('Compile') {
-            steps {
-                sh 'javac calculator.java'
-            }
-        }
-
-        stage('Build & Run') {
-            steps {
-                // Using echo to label the output in the console
-                echo "Running calculation test..."
-                sh 'java calculator 25 5'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'java calculator 30 -5'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deployment completed'
-            }
-        }
+pipeline{
+  agent any
+  stages{
+    stage('clone'){
+      steps{
+        git branch:'main', url:'https://github.com/245123737080-pixel/calculator.git'
+      }
     }
-    
-   
+    stage('compile'){
+      steps{
+        sh 'javac calculator.java'
+      }
+    }
+    stage('build'){
+      steps{
+        sh 'java calculator 25 + 5'
+      }
+    }
+    stage('test'){
+      steps{
+        sh 'java calculator 30 - 5'
+      }
+    }
+    stage('Deploy'){
+      steps{
+        echo 'Deployment completed'
+      }
+    }
+  }
 }
    
 
