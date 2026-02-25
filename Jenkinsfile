@@ -19,5 +19,15 @@ pipeline {
 
        }
      }
+   stage('test'){
+     steps{
+       sh 'java calculator 30 -5'
+     }
+   }
+    stage('Deploy'){
+      steps{
+        echo 'Deployment completed'
+      }
+    }
    }
 }
